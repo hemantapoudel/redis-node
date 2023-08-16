@@ -8,7 +8,8 @@ const port = 3000;
 const prisma = new PrismaClient();
 
 // Create a Redis client instance with the provided connection string
-const redisConnectionString = 'redis://default:redispw@localhost:55000';
+//const redisConnectionString = 'redis://default:redispw@localhost:55001';
+const redisConnectionString = 'redis://redis:6379';
 const redisClient = new IORedis(redisConnectionString);
 
 redisClient.on('connect', () => {
