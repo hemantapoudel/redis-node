@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:18
+FROM node:20-alpine3.17
 
 # Set the working directory
 WORKDIR /app
@@ -12,6 +12,8 @@ RUN npm install
 
 # Copy the rest of the application code
 COPY . .
+
+RUN npx prisma generate
 
 # Expose the port the application runs on
 EXPOSE 3000
